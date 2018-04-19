@@ -1,0 +1,263 @@
+{
+	"version": 1,
+	"allow_edit": true,
+	"plugins": [],
+	"panes": [
+		{
+			"title": "Waste container",
+			"width": 1,
+			"row": {
+				"3": 1,
+				"4": 1,
+				"5": 1
+			},
+			"col": {
+				"3": 1,
+				"4": 1,
+				"5": 3
+			},
+			"col_width": "3",
+			"widgets": [
+				{
+					"type": "nca_google_map",
+					"settings": {
+						"datasource": "datasources[\"WasteContainer\"]"
+					}
+				}
+			]
+		},
+		{
+			"title": "Waste Container 114451",
+			"width": 1,
+			"row": {
+				"3": 11,
+				"4": 15,
+				"5": 1
+			},
+			"col": {
+				"3": 1,
+				"4": 2,
+				"5": 2
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "Taux de remplissage",
+						"value": "var filling = parseFloat(datasources[\"WasteContainer\"][\"WasteContainer-CONT114451\"][\"fillingLevel\"]);\nreturn filling.toFixed(2);",
+						"min_value": 0,
+						"max_value": "1"
+					}
+				},
+				{
+					"type": "html",
+					"settings": {
+						"html": "var date=new Date(datasources[\"WasteContainer\"][\"WasteContainer-CONT114451\"][\"dateLastEmptying\"]);\nvar months=[\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"];\nreturn 'Dernier ramassage '+(\"0\"+date.getDate()).slice(-2)+'/'+(\"0\"+(date.getMonth()+1)).slice(-2)+'/'+date.getFullYear().toString().substr(0,4)+'\\t'+(\"0\"+date.getHours()).slice(-2)+':'+(\"0\"+date.getMinutes()).slice(-2)+':'+(\"0\"+date.getSeconds()).slice(-2);\n\n\n\n",
+						"height": 1
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"4": 1,
+				"5": 11
+			},
+			"col": {
+				"4": 4,
+				"5": 3
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "highcharts-timeseries",
+					"settings": {
+						"timeframe": "6000",
+						"blocks": "5",
+						"chartType": "spline",
+						"xaxis": "{\"title\":{\"text\" : \"Time\"}, \"type\": \"datetime\", \"floor\":0}",
+						"yaxis": "{\"title\":{\"text\" : \"Values\"}, \"minorTickInterval\":\"auto\", \"floor\":0}",
+						"series1": "datasources[\"WasteContainer\"][\"WasteContainer-CONT114451\"][\"fillingLevel\"]",
+						"series1label": "CONT114451",
+						"series2": "datasources[\"WasteContainer\"][\"WasteContainer-CONT119259\"][\"fillingLevel\"]",
+						"series2label": "CONT119259",
+						"series3": "datasources[\"WasteContainer\"][\"WasteContainer-CONT123527\"][\"fillingLevel\"]",
+						"series3label": "CONT123527"
+					}
+				}
+			]
+		},
+		{
+			"title": "Waste Container 123527",
+			"width": 1,
+			"row": {
+				"4": 15,
+				"5": 11
+			},
+			"col": {
+				"4": 3,
+				"5": 3
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "Taux de remplissage",
+						"value": "var filling = parseFloat(datasources[\"WasteContainer\"][\"WasteContainer-CONT123527\"][\"fillingLevel\"]);\nreturn filling.toFixed(2);",
+						"min_value": 0,
+						"max_value": "1"
+					}
+				},
+				{
+					"type": "html",
+					"settings": {
+						"html": "var date=new Date(datasources[\"WasteContainer\"][\"WasteContainer-CONT123527\"][\"dateLastEmptying\"]);\nvar months=[\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"];\nreturn 'Dernier ramassage '+(\"0\"+date.getDate()).slice(-2)+'/'+(\"0\"+(date.getMonth()+1)).slice(-2)+'/'+date.getFullYear().toString().substr(0,4)+'\\t'+(\"0\"+date.getHours()).slice(-2)+':'+(\"0\"+date.getMinutes()).slice(-2)+':'+(\"0\"+date.getSeconds()).slice(-2);\n\n\n\n",
+						"height": 1
+					}
+				}
+			]
+		},
+		{
+			"title": "Waste Container 119259",
+			"width": 1,
+			"row": {
+				"3": 21,
+				"4": 15,
+				"5": 11
+			},
+			"col": {
+				"3": 1,
+				"4": 1,
+				"5": 2
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "Taux de remplissage",
+						"value": "var filling = parseFloat(datasources[\"WasteContainer\"][\"WasteContainer-CONT119259\"][\"fillingLevel\"]);\nreturn filling.toFixed(2);",
+						"min_value": 0,
+						"max_value": "1"
+					}
+				},
+				{
+					"type": "html",
+					"settings": {
+						"html": "var date=new Date(datasources[\"WasteContainer\"][\"WasteContainer-CONT119259\"][\"dateLastEmptying\"]);\nvar months=[\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"];\nreturn 'Dernier ramassage '+(\"0\"+date.getDate()).slice(-2)+'/'+(\"0\"+(date.getMonth()+1)).slice(-2)+'/'+date.getFullYear().toString().substr(0,4)+'\\t'+(\"0\"+date.getHours()).slice(-2)+':'+(\"0\"+date.getMinutes()).slice(-2)+':'+(\"0\"+date.getSeconds()).slice(-2);\n\n\n\n",
+						"height": 1
+					}
+				}
+			]
+		},
+		{
+			"title": "Waste Container 131406",
+			"width": 1,
+			"row": {
+				"4": 25,
+				"5": 25
+			},
+			"col": {
+				"4": 1,
+				"5": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"value": "var filling = parseFloat(datasources[\"WasteContainer\"][\"WasteContainer-CONT131406\"][\"fillingLevel\"]);\nreturn filling.toFixed(2);",
+						"min_value": 0,
+						"max_value": "1"
+					}
+				},
+				{
+					"type": "html",
+					"settings": {
+						"html": "var date=new Date(datasources[\"WasteContainer\"][\"WasteContainer-CONT131406\"][\"dateLastEmptying\"]);\nvar months=[\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"];\nreturn 'Dernier ramassage '+(\"0\"+date.getDate()).slice(-2)+'/'+(\"0\"+(date.getMonth()+1)).slice(-2)+'/'+date.getFullYear().toString().substr(0,4)+'\\t'+(\"0\"+date.getHours()).slice(-2)+':'+(\"0\"+date.getMinutes()).slice(-2)+':'+(\"0\"+date.getSeconds()).slice(-2);\n\n",
+						"height": 1
+					}
+				}
+			]
+		},
+		{
+			"title": "Waste Container 135459",
+			"width": 1,
+			"row": {
+				"4": 25,
+				"5": 25
+			},
+			"col": {
+				"4": 2,
+				"5": 2
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"value": "var filling = parseFloat(datasources[\"WasteContainer\"][\"WasteContainer-CONT135459\"][\"fillingLevel\"]);\nreturn filling.toFixed(2);\n                         \n                         ",
+						"min_value": 0,
+						"max_value": "1"
+					}
+				},
+				{
+					"type": "html",
+					"settings": {
+						"html": "var date=new Date(datasources[\"WasteContainer\"][\"WasteContainer-CONT135459\"][\"dateLastEmptying\"]);\nvar months=[\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"];\nreturn 'Dernier ramassage '+(\"0\"+date.getDate()).slice(-2)+'/'+(\"0\"+(date.getMonth()+1)).slice(-2)+'/'+date.getFullYear().toString().substr(0,4)+'\\t'+(\"0\"+date.getHours()).slice(-2)+':'+(\"0\"+date.getMinutes()).slice(-2)+':'+(\"0\"+date.getSeconds()).slice(-2);\n\n",
+						"height": 1
+					}
+				}
+			]
+		},
+		{
+			"title": "Waste Container CONT137741",
+			"width": 1,
+			"row": {
+				"4": 25
+			},
+			"col": {
+				"4": 3
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"value": "var filling = parseFloat(datasources[\"WasteContainer\"][\"WasteContainer-CONT137741\"][\"fillingLevel\"]);\nreturn filling.toFixed(2);",
+						"min_value": 0,
+						"max_value": "1"
+					}
+				},
+				{
+					"type": "html",
+					"settings": {
+						"html": "var date=new Date(datasources[\"WasteContainer\"][\"WasteContainer-CONT137741\"][\"dateLastEmptying\"]);\nvar months=[\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\", \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"];\nreturn 'Dernier ramassage '+(\"0\"+date.getDate()).slice(-2)+'/'+(\"0\"+(date.getMonth()+1)).slice(-2)+'/'+date.getFullYear().toString().substr(0,4)+'\\t'+(\"0\"+date.getHours()).slice(-2)+':'+(\"0\"+date.getMinutes()).slice(-2)+':'+(\"0\"+date.getSeconds()).slice(-2);\n\n\n\n",
+						"height": 1
+					}
+				}
+			]
+		}
+	],
+	"datasources": [
+		{
+			"name": "WasteContainer",
+			"type": "NCA FIWARE Orion",
+			"settings": {
+				"cbhost": "freeboard.nicecotedazur.org",
+				"use_thingproxy": false,
+				"service": "nca",
+				"servicepath": "/waste/container",
+				"isPattern": true,
+				"type": "WasteContainer",
+				"id": "WasteContainer-.*",
+				"refresh": 60,
+				"name": "WasteContainer"
+			}
+		}
+	],
+	"columns": 4
+}
